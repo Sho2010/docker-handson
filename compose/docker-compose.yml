@@ -1,0 +1,23 @@
+version: '2'
+services:
+  obelisk:
+    image: my_docker
+    container_name: app
+    build: .
+    environment:
+      TZ: "Asia/Tokyo"
+    depends_on:
+      - db
+    links:
+      - db
+    # for develop
+    # volumes:
+    #   - .:/app
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      TZ: "Asia/Tokyo"
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    # ports:
+    #   - '3306:3306'
