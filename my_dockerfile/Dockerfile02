@@ -1,0 +1,7 @@
+FROM ruby:2.2.3
+
+WORKDIR /my_docker
+COPY . /my_docker
+
+CMD ["ruby", "src/hello.rb"]
+
