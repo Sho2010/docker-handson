@@ -1,6 +1,6 @@
 version: '2'
 services:
-  obelisk:
+  app:
     image: my_docker
     container_name: app
     build: .
@@ -19,5 +19,5 @@ services:
     environment:
       TZ: "Asia/Tokyo"
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-    # ports:
-    #   - '3306:3306'
+    ports:
+      - '3306:3306'
